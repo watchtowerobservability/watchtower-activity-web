@@ -1,0 +1,43 @@
+{
+  "name": "@watchtowerobservability/activity-web",
+  "version": "0.1.0",
+  "description": "Watchtower hosted activity log: <wt-activity> web component for browsers (no dependencies)",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": [
+    "./dist/index.js",
+    "./dist/wt-activity.min.js"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./iife": "./dist/wt-activity.min.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "size": "node scripts/size.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "prepack": "npm run build && npm run size"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.0",
+    "esbuild": "0.28.2",
+    "happy-dom": "21.0.4",
+    "typescript": "5.7.2",
+    "vitest": "5.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watchtowerobservability/watchtower-activity-web.git"
+  },
+  "homepage": "https://github.com/watchtowerobservability/watchtower-activity-web#readme"
+}
