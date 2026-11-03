@@ -1,0 +1,2 @@
+# Shared Merkle log vectors (verify_log.test.ts).
+testdata/activity_merkle_vectors.json

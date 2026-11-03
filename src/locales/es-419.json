@@ -1,0 +1,20 @@
+{
+"loadMore":"Cargar más",
+"retry":"Volver a intentar",
+"export":"Exportar",
+"copy":"Copiar",
+"credential":"Credencial",
+"viewName":"Nombre de la vista",
+"copyLink":"Copiar enlace a este evento",
+"linkCopied":"Enlace copiado",
+"signIn":"Iniciar sesión",
+"signOut":"Cerrar sesión",
+"emailLink":"Enviar el enlace por correo a (opcional)",
+"download":"Descargar",
+"bookmark":"Agregar a favoritos",
+"unbookmark":"Quitar de favoritos",
+"bookmarks":"Favoritos",
+"bookmarked":"En favoritos",
+"offline":"Sin conexión: se muestran los eventos cargados a las {time}.",
+"livePaused":"Las actualizaciones en vivo están en pausa mientras esta pestaña está oculta."
+}

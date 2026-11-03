@@ -1,0 +1,12 @@
+{
+"signIn":"Se connecter",
+"signOut":"Se déconnecter",
+"emailLink":"Envoyer le lien par courriel à (facultatif)",
+"download":"Télécharger",
+"bookmark":"Ajouter un signet",
+"unbookmark":"Retirer le signet",
+"bookmarks":"Signets",
+"bookmarked":"Dans les signets",
+"offline":"Hors ligne : affichage des événements chargés à {time}.",
+"livePaused":"Les mises à jour en direct sont en pause tant que cet onglet est masqué."
+}

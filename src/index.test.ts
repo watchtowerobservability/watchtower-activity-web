@@ -47,7 +47,7 @@ describe('<wt-activity>', () => {
     vi.stubGlobal('fetch', f);
     const { element } = mountActivity(document.body, { session: 'tok123', baseUrl: 'https://api.test' });
     await vi.waitFor(() => expect(element.shadowRoot!.querySelector('li')).toBeTruthy());
-    const [url, init] = f.mock.calls[0] as unknown as [string, RequestInit];
+    const [url, init] = (f.mock.calls as unknown as [string][]).find((c) => c[0].includes('/feed?')) as unknown as [string, RequestInit];
     expect(url).toMatch(/^https:\/\/api\.test\/v1\/activity\/feed\?/);
     expect(url).not.toContain('tok123');
     expect((init.headers as Record<string, string>).authorization).toBe('Bearer tok123');
