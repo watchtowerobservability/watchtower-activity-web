@@ -17,7 +17,7 @@ type V = {
   sth: Head; digests: Digest[]; completeness: { message: string; kid: string; signature: string }; tombstone: Tombstone;
   verdicts: { name: string; expect: string; first_bad_seq?: number; page: NetPage; head: Head | null }[];
 };
-const v = JSON.parse(readFileSync(join(process.cwd(), '../../testdata/activity_verify_vectors.json'), 'utf8')) as V;
+const v = JSON.parse(readFileSync(join(process.cwd(), 'testdata/activity_verify_vectors.json'), 'utf8')) as V;
 const keys = v.keys.keys;
 const b64std = (s: string) => btoa(String.fromCharCode(...Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (s.length % 4)) % 4)), (c) => c.charCodeAt(0))));
 const rekorVkey = async () => {

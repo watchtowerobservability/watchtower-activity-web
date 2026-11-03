@@ -10,7 +10,7 @@ type Vectors = {
   inclusion: { index: number; size: number; path: string[] }[];
   consistency: { from: number; to: number; proof: string[] }[];
 };
-const v = JSON.parse(readFileSync(join(process.cwd(), '../../testdata/activity_merkle_vectors.json'), 'utf8')) as Vectors;
+const v = JSON.parse(readFileSync(join(process.cwd(), 'testdata/activity_merkle_vectors.json'), 'utf8')) as Vectors;
 const leaf = async (hex: string) => new Uint8Array(await crypto.subtle.digest('SHA-256', new Uint8Array([0, ...bytes(hex)])));
 const root = (n: number) => v.roots[String(n)]!;
 
