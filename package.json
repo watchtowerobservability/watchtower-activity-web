@@ -1,6 +1,6 @@
 {
   "name": "@watchtowerobservability/activity-web",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Watchtower hosted activity log: <wt-activity> web component for browsers (no dependencies)",
   "license": "Apache-2.0",
   "type": "module",
