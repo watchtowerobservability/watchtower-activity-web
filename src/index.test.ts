@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { applyTheme, interpolate, mountActivity } from './index';
-import type { Event, Feed } from './index';
+import { applyTheme, interpolate, mountActivity } from './index.js';
+import type { Event, Feed } from './index.js';
 
 const ev = (o: Partial<Event> = {}): Event => ({
   id: '1', account_id: 'a', actor: { id: 'u1', name: 'Ann' }, action: 'invoice.paid',

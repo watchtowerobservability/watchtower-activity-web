@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { checkPin, columns, receiptLinks, sparkline, views } from './extras';
-import { mountActivity } from './index';
-import type { Event } from './index';
-import { chipText, dirFor, loadPrefs, removeTerm, tokenize } from './query';
+import { checkPin, columns, receiptLinks, sparkline, views } from './extras.js';
+import { mountActivity } from './index.js';
+import type { Event } from './index.js';
+import { chipText, dirFor, loadPrefs, removeTerm, tokenize } from './query.js';
 
 const ev = (o: Partial<Event> = {}): Event => ({
   id: 'e1', account_id: 'a', actor: { id: 'anon', type: 'anonymous' }, action: 'page.viewed', metadata: { plan: 'pro' },
@@ -86,7 +86,7 @@ describe('<wt-activity> viewer UX', () => {
 
 describe('regions and async exports', () => {
   it('moves to the region of the token, stays put otherwise', async () => {
-    const { regionBase } = await import('./lib');
+    const { regionBase } = await import('./lib.js');
     const dir = { current: 'us', data: [{ region: 'us', api_base_url: 'https://us.x' }, { region: 'eu', api_base_url: 'https://eu.x/' }] };
     const f = vi.fn(async () => new Response(JSON.stringify(dir)));
     vi.stubGlobal('fetch', f);
@@ -98,7 +98,7 @@ describe('regions and async exports', () => {
   });
 
   it('queues an export with only the filters the API takes', async () => {
-    const { exportsPanel } = await import('./extras');
+    const { exportsPanel } = await import('./extras.js');
     const calls: [string, RequestInit | undefined][] = [];
     vi.stubGlobal('fetch', vi.fn(async (u: string, i?: RequestInit) => { calls.push([u, i]); return new Response(JSON.stringify({ data: [] })); }));
     const p = exportsPanel({}, 'https://api.x', { headers: { authorization: 'Bearer t' } }, new URLSearchParams({ action: 'a.b', q: 'x', target_id: 't1' }));

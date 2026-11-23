@@ -1,4 +1,4 @@
-import type { Event, Filters, Strings, Theme } from './types';
+import type { Event, Filters, Strings, Theme } from './types.js';
 
 export interface Part { text: string; field: boolean }
 

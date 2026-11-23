@@ -4,7 +4,7 @@
 // (INVALID > VALID_PRUNED > VALID / VALID_UNANCHORED). Spec: docs/superpowers/specs/2026-10-31-activity-verification-spec.md.
 // WebCrypto has Ed25519 but neither Ed25519ph nor ML-DSA: a Rekor v2 entry's own signature and the ML-DSA-44
 // twin signatures are not checked here (wtctl and the Rust verifier check them); everything else is.
-import { bytes, canonical, hex, merkleVerify, verifyRows, verifySignature, type ChainRow, type Checkpoint, type Sth } from './verify';
+import { bytes, canonical, hex, merkleVerify, verifyRows, verifySignature, type ChainRow, type Checkpoint, type Sth } from './verify.js';
 
 type Keys = { kid: string; x: string }[];
 type Bytes = Uint8Array<ArrayBuffer>;

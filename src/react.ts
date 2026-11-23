@@ -1,7 +1,7 @@
 // Optional React wrapper. React is a peer: nothing of it is bundled; import this entry only from React apps.
 import { createElement, useEffect, useRef, type CSSProperties } from 'react';
-import './index';
-import type { WtActivity } from './index';
+import './index.js';
+import type { WtActivity } from './index.js';
 
 /** Attributes of <wt-activity>; booleans become present/absent attributes. */
 export interface WtActivityAttributes {

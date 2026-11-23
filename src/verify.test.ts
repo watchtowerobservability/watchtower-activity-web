@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { bytes, canonical, chainBody, merkleVerify, micros, verifyProof, verifyResponse, verifyRows, type ChainRow, type Proof } from './verify';
+import { bytes, canonical, chainBody, merkleVerify, micros, verifyProof, verifyResponse, verifyRows, type ChainRow, type Proof } from './verify.js';
 
 // Vectors computed independently (Python hashlib + json.dumps(sort_keys)): SHA-256(prev || canonical_json(body)),
 // RFC 6962 leaf SHA-256(0x00 || h) and node SHA-256(0x01 || l || r).

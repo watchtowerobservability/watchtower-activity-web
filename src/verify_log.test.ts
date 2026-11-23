@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { bytes, consistencyVerify, merkleVerify, verifyConsistency, type Consistency, type Sth } from './verify';
+import { bytes, consistencyVerify, merkleVerify, verifyConsistency, type Consistency, type Sth } from './verify.js';
 
 // RFC 6962 vectors computed by an independent Python script, shared with the Rust (wt-store-pg merkle_log) and Go
 // (wtctl) tests: leaf i = SHA-256(0x00 || data[i]).

@@ -18,4 +18,4 @@ await build({ ...common, entryPoints: ['src/react.ts'], format: 'esm', outfile: 
 writeFileSync('dist/meta-iife.json', JSON.stringify(iife.metafile));
 writeFileSync('dist/meta-esm.json', JSON.stringify(esm.metafile));
 const tsc = createRequire(import.meta.url).resolve('typescript/bin/tsc');
-execFileSync(process.execPath, [tsc, '-p', 'tsconfig.json', '--noEmit', 'false', '--emitDeclarationOnly', '--declaration', '--outDir', 'dist', '--rootDir', 'src'], { stdio: 'inherit' });
+execFileSync(process.execPath, [tsc, '-p', 'tsconfig.json', '--noEmit', 'false', '--emitDeclarationOnly', '--declaration', '--module', 'NodeNext', '--moduleResolution', 'NodeNext', '--outDir', 'dist', '--rootDir', 'src'], { stdio: 'inherit' });

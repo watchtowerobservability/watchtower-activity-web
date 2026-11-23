@@ -1,4 +1,4 @@
-import type { Strings } from './types';
+import type { Strings } from './types.js';
 
 /**
  * Built-in copy beyond en (lib.ts EN), by language: filled when the lazy ux.js loads a locale file

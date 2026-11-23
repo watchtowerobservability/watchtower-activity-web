@@ -1,13 +1,13 @@
 // Lazy-loaded extras of <wt-activity> (outside the 12 KB core): verify and per-event proofs, column
 // chooser, saved views, async exports and the daily-volume sparkline. Built as dist/extras.js next to the main bundle; the element imports it
 // on first use, so a page that never opens them never downloads them.
-import type { Column, Strings } from './types';
+import type { Column, Strings } from './types.js';
 
 // Verification lives here too, so its hashing and Ed25519 code stays out of the core bundle.
-import { runConsistency } from './verify';
-import { verdict, type Head as NetHead, type NetPage, type NetVerdict } from './verify_net';
-export { runConsistency, runProof, runVerify } from './verify';
-export * from './verify_net';
+import { runConsistency } from './verify.js';
+import { verdict, type Head as NetHead, type NetPage, type NetVerdict } from './verify_net.js';
+export { runConsistency, runProof, runVerify } from './verify.js';
+export * from './verify_net.js';
 
 /**
  * The four-state verdict (VALID / VALID_UNANCHORED / VALID_PRUNED / INVALID) over every verify page, the

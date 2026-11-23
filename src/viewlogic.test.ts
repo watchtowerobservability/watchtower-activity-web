@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dirFor, fmt, groupRuns, localeFiles, markKind, relatedQueries, toggleTerm, viaText } from './viewlogic';
+import { dirFor, fmt, groupRuns, localeFiles, markKind, relatedQueries, toggleTerm, viaText } from './viewlogic.js';
 
 const ev = (id: string, actor: string, action: string, at: string) => ({ id, action, occurred_at: at, actor: { id: actor } });
 
@@ -63,7 +63,7 @@ describe('viewlogic', () => {
 
 describe('ux deep links', () => {
   it('reads #wta-q/from/to/view and drops bad dates', async () => {
-    const { linkFilters } = await import('./ux');
+    const { linkFilters } = await import('./ux.js');
     expect(linkFilters('#wta-q=actor%3Aann&wta-from=2026-10-01T00:00:00Z&wta-to=nope&wta-view=ops')).toEqual({
       f: { q: 'actor:ann', from: '2026-10-01T00:00:00Z', range: 'custom' }, view: 'ops',
     });
@@ -73,7 +73,7 @@ describe('ux deep links', () => {
 
 describe('gap markers', () => {
   it('places each incident before the first older row', async () => {
-    const { placeGaps } = await import('./viewlogic');
+    const { placeGaps } = await import('./viewlogic.js');
     const times = ['2026-10-30T10:00:00Z', '2026-10-30T08:00:00Z', '2026-10-29T08:00:00Z'];
     const g1 = { kind: 'silent_source', started_at: '2026-10-30T08:30:00Z', ended_at: '2026-10-30T09:00:00Z' };
     const open = { kind: 'chain_break', started_at: '2026-10-30T11:00:00Z' };

@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { claims, interpolate, pickStrings, toQuery } from './lib';
+import { claims, interpolate, pickStrings, toQuery } from './lib.js';
 import { readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { mountActivity, type Event } from './index';
+import { mountActivity, type Event } from './index.js';
 
 const ev = (o: Partial<Event> = {}): Event => ({
   id: '1', account_id: 'a', actor: { id: 'u1', name: 'Ann', email: 'ann@acme.test' }, action: 'user.role_changed',

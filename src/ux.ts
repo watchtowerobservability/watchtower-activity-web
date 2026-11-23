@@ -4,11 +4,11 @@
 // actors, redaction markers, the archive (hot-window) warning with a restore request, shared views with a
 // default and `#wta-view=` short links, deep links, cross-tab live updates with idle disconnect, an offline
 // cache and the live integrity badge. The core loads it on connect; if it cannot load, the core still works.
-import { readSse, relTime, sseCount } from './lib';
-import type { Event, Feed, Filters, Strings, Theme } from './types';
-import { fmt, groupRuns, localeFiles, markKind, placeGaps, type Gap, relatedQueries, toggleTerm, hasTerm, viaText, type Hop } from './viewlogic';
+import { readSse, relTime, sseCount } from './lib.js';
+import type { Event, Feed, Filters, Strings, Theme } from './types.js';
+import { fmt, groupRuns, localeFiles, markKind, placeGaps, type Gap, relatedQueries, toggleTerm, hasTerm, viaText, type Hop } from './viewlogic.js';
 
-export { LOCALE_TAGS, fmt } from './viewlogic';
+export { LOCALE_TAGS, fmt } from './viewlogic.js';
 
 /** What the core hands the chunk on every call. */
 export interface Ctx {

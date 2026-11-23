@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import {
   logOrigin, parseNote, parseVkey, verdict, verifyCompleteness, verifyCosignature, verifyDigests, verifyDisclosure, verifyNote,
   verifyTombstone, type Digest, type Head, type NetPage, type Tombstone,
-} from './verify_net';
+} from './verify_net.js';
 
 // testdata/activity_verify_vectors.json: the conformance vectors every verifier (Rust, Go, TS, SDKs) runs.
 type V = {

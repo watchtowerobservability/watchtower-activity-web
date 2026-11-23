@@ -1,12 +1,12 @@
-import { EN, applyTheme, claims, fmtDate, interpolate, isAccessEvent, isDark, pickStrings, regionBase, relTime, text, toQuery } from './lib';
-import { fmt } from './viewlogic';
-import { LOCALES } from './locales';
-import { chipText, loadPrefs, removeTerm, savePrefs, tokenize, type Prefs } from './query';
-import type { Event, Feed, Filters, MountOptions, Strings, Theme } from './types';
+import { EN, applyTheme, claims, fmtDate, interpolate, isAccessEvent, isDark, pickStrings, regionBase, relTime, text, toQuery } from './lib.js';
+import { fmt } from './viewlogic.js';
+import { LOCALES } from './locales.js';
+import { chipText, loadPrefs, removeTerm, savePrefs, tokenize, type Prefs } from './query.js';
+import type { Event, Feed, Filters, MountOptions, Strings, Theme } from './types.js';
 
-export type { Event, Feed, Filters, MountOptions, Theme, Palette, ActionStyle, Column, Strings, Target } from './types';
-export { LOCALES } from './locales';
-export { interpolate, applyTheme, pickStrings, toQuery, field, text, claims, fmtDate } from './lib';
+export type { Event, Feed, Filters, MountOptions, Theme, Palette, ActionStyle, Column, Strings, Target } from './types.js';
+export { LOCALES } from './locales.js';
+export { interpolate, applyTheme, pickStrings, toQuery, field, text, claims, fmtDate } from './lib.js';
 
 const CSS = `:host{display:block;position:relative;font:14px/1.45 var(--wta-font,system-ui,sans-serif);color:var(--wta-fg,#1a1a1a);background:var(--wta-bg,#fff)}
 *{box-sizing:border-box}.w{padding:16px}h2{font-size:18px;margin:0 0 12px}h3{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--wta-muted,#666);margin:16px 0 4px}
@@ -24,8 +24,8 @@ dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0}dt{color:va
 .env{background:#fef3c7;color:#78350f;font-weight:600;text-align:center;padding:4px;border-radius:var(--wta-radius,6px);margin-bottom:8px}fieldset,form{border:0;padding:0;margin:0}`;
 // The extras chunk sits next to this file (ESM: import.meta.url; IIFE: the <script> src).
 const SELF = typeof document !== 'undefined' ? (document.currentScript as HTMLScriptElement | null)?.src : undefined;
-type Extras = typeof import('./extras');
-type Ux = import('./ux').Ux;
+type Extras = typeof import('./extras.js');
+type Ux = import('./ux.js').Ux;
 
 const h = <K extends keyof HTMLElementTagNameMap>(tag: K, text?: string, cls?: string): HTMLElementTagNameMap[K] => {
   const e = document.createElement(tag);
@@ -92,7 +92,7 @@ export class WtActivity extends HTMLElement {
   // The UX chunk (ux.js next to this file): locale, shared or linked view, grouping, bookmarks, live; the core works without it.
   async #boot() {
     try {
-      const x = (await import(/* @vite-ignore */ this.getAttribute('ux-url') || new URL('./ux.js', SELF || import.meta.url).href)) as typeof import('./ux');
+      const x = (await import(/* @vite-ignore */ this.getAttribute('ux-url') || new URL('./ux.js', SELF || import.meta.url).href)) as typeof import('./ux.js');
       const u = (this.#u ??= x.create(() => this.#ctx())), r = await u.ready();
       LOCALES[this.#locale.split('-')[0]!] = { ...x.UX_EN, ...r.strings };
       if (r.filters) this.#f = r.filters;

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { openSealed } from './extras';
+import { openSealed } from './extras.js';
 import { readFileSync } from 'node:fs';
 
 const KEY = 'AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8=';
